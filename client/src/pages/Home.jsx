@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/blogs").then((res) => {
+    axios.get("https://bloggerspace-yjdi.onrender.com/api/blogs").then((res) => {
       console.log("Fetched Blogs:", res.data);
       setBlogs(res.data);
     });

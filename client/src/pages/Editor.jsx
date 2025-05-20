@@ -19,7 +19,7 @@ const Editor = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/api/blogs/${id}`).then((res) => {
+      axios.get(`https://bloggerspace-yjdi.onrender.com/api/blogs/${id}`).then((res) => {
         const blog = res.data;
         setTitle(blog.title);
         setContent(blog.content);
@@ -41,7 +41,7 @@ const Editor = () => {
     if (!title && !content) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/blogs/save-draft", {
+      const res = await axios.post("https://bloggerspace-yjdi.onrender.com/api/blogs/save-draft", {
         id: draftId,
         title,
         content,
@@ -60,7 +60,7 @@ const Editor = () => {
 
   const handlePublish = async () => {
     try {
-      await axios.post("http://localhost:5000/api/blogs/publish", {
+      await axios.post("https://bloggerspace-yjdi.onrender.com/api/blogs/publish", {
         id: draftId,
         title,
         content,

@@ -7,7 +7,7 @@ const BlogView = () => {
   const [blog, setBlog] = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/blogs/${id}`)
+    axios.get(`https://bloggerspace-yjdi.onrender.com/api/blogs/${id}`)
       .then((res) => setBlog(res.data))
       .catch((err) => console.error("Error fetching blog:", err));
   }, [id]);

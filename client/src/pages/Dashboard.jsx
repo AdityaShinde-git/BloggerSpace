@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/blogs");
+      const res = await axios.get("https://bloggerspace-yjdi.onrender.com/api/blogs");
       setBlogs(res.data);
     } catch (error) {
       console.error("Failed to fetch blogs:", error);

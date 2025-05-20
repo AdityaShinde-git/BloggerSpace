@@ -21,7 +21,7 @@ const BlogCard = ({ blog, onDelete }) => {
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
-      await axios.delete(`http://localhost:5000/api/blogs/${blog._id}`);
+      await axios.delete(`https://bloggerspace-yjdi.onrender.com/api/blogs/${blog._id}`);
       onDelete();
     }
   };
@@ -41,7 +41,7 @@ const BlogCard = ({ blog, onDelete }) => {
   const handleAddComment = async () => {
     if (!newComment.trim()) return;
     try {
-      const res = await axios.post(`http://localhost:5000/api/blogs/${blog._id}/comment`, {
+      const res = await axios.post(`https://bloggerspace-yjdi.onrender.com/api/blogs/${blog._id}/comment`, {
         user: "Anonymous",
         message: newComment,
       });
